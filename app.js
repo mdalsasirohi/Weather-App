@@ -1,3 +1,5 @@
+const apiKey = "api_key";
+
 const searchBar = document.querySelector(".search_bar");
 const searchButton = document.querySelector(".search");
 const selectCity = document.querySelector(".select_city");
@@ -38,7 +40,7 @@ searchButton.addEventListener("click", async(event) => {
     event.preventDefault()
     selectCity.style.display = "none";
     weatherDetails.style.display = "flex";
-    const base_URL = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=323898e582a73e92bf5a467e01950428&units=metric`;
+    const base_URL = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`;
     let response = await fetch(base_URL);
     data = await response.json();
     console.log(data);
